@@ -11,54 +11,66 @@
       "id": "step-intro",
       "label": "Welcome",
       "story": {
-        "text": "Welcome to the ecosystem explorer. This is where your journey begins.",
-        "refs": []
+        "text": "Добро пожаловать в экосистему utemix-lab. Это живая исследовательская лаборатория, где контент, код и архитектура развиваются одновременно.",
+        "refs": [
+          { "type": "concept", "id": "ecosystem:concept:ecosystem-layer", "label": "Ecosystem Layer" }
+        ]
       },
       "system": {
-        "text": "The visitor mode provides a read-only view of the route graph.",
-        "refs": []
+        "text": "Visitor mode — режим чтения Route Graph. Вы видите маршрут, но не можете его изменить. Это соответствует принципу 'Canon ≠ Derived'.",
+        "refs": [
+          { "type": "pattern", "id": "ecosystem:pattern:manual-delta-acceptance", "label": "Manual Delta Acceptance" }
+        ]
       },
       "service": {
-        "text": "Use navigation controls to move between steps.",
+        "text": "Используйте навигацию для перемещения между шагами маршрута.",
         "actions": [
-          { "id": "action-start", "label": "Start Tour", "type": "navigate" }
+          { "id": "action-start", "label": "Начать тур", "type": "navigate" }
         ]
       },
       "position": { "x": 100, "y": 200 }
     },
     {
       "id": "step-overview",
-      "label": "Overview",
+      "label": "Проекты",
       "story": {
-        "text": "The ecosystem consists of interconnected projects and concepts.",
-        "refs": []
+        "text": "Экосистема состоит из связанных проектов: extended-mind (мозг), vovaipetrova-core (память), dream-graph (глаза), minds-lorgnette (расширение).",
+        "refs": [
+          { "type": "project", "id": "ecosystem:project:extended-mind", "label": "extended-mind" },
+          { "type": "project", "id": "ecosystem:project:dream-graph", "label": "dream-graph" },
+          { "type": "project", "id": "ecosystem:project:minds-lorgnette", "label": "minds-lorgnette" }
+        ]
       },
       "system": {
-        "text": "Each project follows the same architectural principles.",
-        "refs": []
+        "text": "Каждый проект имеет ecosystem/ слой с описанием своей роли и граф-данными. Связи между проектами формируют Universe Graph.",
+        "refs": [
+          { "type": "service", "id": "ecosystem:service:meaning-core", "label": "Meaning Core" }
+        ]
       },
       "service": {
-        "text": "Click on nodes to explore details.",
+        "text": "Нажмите на ref, чтобы увидеть детали проекта.",
         "actions": []
       },
       "position": { "x": 300, "y": 200 }
     },
     {
       "id": "step-conclusion",
-      "label": "Next Steps",
+      "label": "Следующие шаги",
       "story": {
-        "text": "You've completed the introduction. Ready to dive deeper?",
-        "refs": []
+        "text": "Вы познакомились с основами. evoquant питает экосистему идеями, extended-mind координирует, vovaipetrova-core хранит канон.",
+        "refs": [
+          { "type": "project", "id": "ecosystem:project:evoquant", "label": "evoquant" }
+        ]
       },
       "system": {
-        "text": "More routes will be available as the ecosystem grows.",
+        "text": "Больше маршрутов появится по мере роста экосистемы. Каждый маршрут конечен и проверяем (принцип 'Конечность обязательна').",
         "refs": []
       },
       "service": {
-        "text": "Export this session or start a new route.",
+        "text": "Экспортируйте сессию или начните новый маршрут.",
         "actions": [
-          { "id": "action-export", "label": "Export Session", "type": "export" },
-          { "id": "action-restart", "label": "Restart", "type": "navigate" }
+          { "id": "action-export", "label": "Экспорт сессии", "type": "export" },
+          { "id": "action-restart", "label": "Начать заново", "type": "navigate" }
         ]
       },
       "position": { "x": 500, "y": 200 }
