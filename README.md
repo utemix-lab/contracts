@@ -2,6 +2,19 @@
 
 **Хаб контрактов** — UI-контракты и ассеты для всех рендеров экосистемы.
 
+## Роль в экосистеме
+
+| | |
+|---|---|
+| **Слой** | 4. Контрактный |
+| **Функция** | Единственный "язык" между рендерами |
+| **Входы** | Route Graph из extended-mind |
+| **Выходы** | JSON контракты для dream-graph, godot-sandbox, site |
+
+→ [Слои согласованности](https://github.com/utemix-lab/extended-mind/blob/main/docs/architecture/COHERENCE_LAYERS.md)
+
+---
+
 ## Что это
 
 `contracts` — это единственный источник истины для:
