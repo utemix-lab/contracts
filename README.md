@@ -4,7 +4,7 @@
 
 ## Что это
 
-`utemix-workspace` — это единственный источник истины для:
+`contracts` — это единственный источник истины для:
 
 - **UI контрактов** — layout, interaction, bindings
 - **Маршрутов** — route graphs в JSON
@@ -23,7 +23,7 @@ contracts/public/ — единственный "язык" между ренде�
 ## Структура
 
 ```
-utemix-workspace/
+contracts/
 ├── README.md
 ├── contracts/
 │   ├── ASSETS_AND_TEXTS_GUIDE.md    # Инструкция по размещению
@@ -146,7 +146,7 @@ const layout = await fetch('/contracts/public/ui/layout/visitor.layout.json')
 
 | Рендер | Репозиторий | Статус |
 |--------|-------------|--------|
-| Godot sandbox | [utemix-godot-sandbox](https://github.com/utemix-lab/utemix-godot-sandbox) | 🚧 WIP |
+| Godot sandbox | [godot-sandbox](https://github.com/utemix-lab/godot-sandbox) | 🚧 WIP |
 | Web viewer | `sandboxes/web-viewer/` | 📋 Planned |
 | vovaipetrova-core | [vovaipetrova-core](https://github.com/utemix-lab/vovaipetrova-core) | 🎯 Target |
 
