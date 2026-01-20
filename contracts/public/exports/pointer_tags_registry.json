@@ -1,0 +1,42 @@
+{
+  "$schema": "https://utemix-lab.github.io/schemas/pointer-tags.schema.json",
+  "version": "0.1.0",
+  "id": "pointer-tags-registry",
+  "title": "Pointer Tags Registry",
+  "description": "Registry of semantic pointer tags used across the ecosystem",
+  "tags": [
+    {
+      "id": "pt-architecture",
+      "label": "Architecture",
+      "description": "Points to architectural decisions and patterns",
+      "color": "#58a6ff",
+      "icon": "assets/icons/system/architecture.svg",
+      "pointsTo": {
+        "type": "category",
+        "filter": { "kind": ["Decision", "Pattern", "Principle"] }
+      }
+    },
+    {
+      "id": "pt-concept",
+      "label": "Concept",
+      "description": "Points to ontological concepts and definitions",
+      "color": "#a78bfa",
+      "icon": "assets/icons/system/concept.svg",
+      "pointsTo": {
+        "type": "category",
+        "filter": { "kind": ["Concept", "Definition"] }
+      }
+    },
+    {
+      "id": "pt-actor",
+      "label": "Actor",
+      "description": "Points to roles and characters",
+      "color": "#facc15",
+      "icon": "assets/icons/system/actor.svg",
+      "pointsTo": {
+        "type": "category",
+        "filter": { "kind": ["Role"] }
+      }
+    }
+  ]
+}

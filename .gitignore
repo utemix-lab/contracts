@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Node (if using scripts)
+node_modules/
+npm-debug.log
+
+# Python (if using scripts)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build outputs
+dist/
+build/
+
+# Local config (не коммитить)
+config/local_*.json
+.env
+.env.local
+
+# Однако НЕ игнорируем contracts/public/assets
+!contracts/public/assets/

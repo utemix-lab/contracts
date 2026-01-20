@@ -1,0 +1,98 @@
+{
+  "$schema": "https://utemix-lab.github.io/schemas/route.schema.json",
+  "version": "0.1.0",
+  "id": "visitor-demo-route",
+  "title": "Demo Route: Introduction",
+  "description": "A simple demo route for testing the Visitor mode",
+  "created_at": "2026-01-20T12:00:00Z",
+  "start_node_id": "step-intro",
+  "nodes": [
+    {
+      "id": "step-intro",
+      "label": "Welcome",
+      "story": {
+        "text": "Welcome to the ecosystem explorer. This is where your journey begins.",
+        "refs": []
+      },
+      "system": {
+        "text": "The visitor mode provides a read-only view of the route graph.",
+        "refs": []
+      },
+      "service": {
+        "text": "Use navigation controls to move between steps.",
+        "actions": [
+          { "id": "action-start", "label": "Start Tour", "type": "navigate" }
+        ]
+      },
+      "position": { "x": 100, "y": 200 }
+    },
+    {
+      "id": "step-overview",
+      "label": "Overview",
+      "story": {
+        "text": "The ecosystem consists of interconnected projects and concepts.",
+        "refs": []
+      },
+      "system": {
+        "text": "Each project follows the same architectural principles.",
+        "refs": []
+      },
+      "service": {
+        "text": "Click on nodes to explore details.",
+        "actions": []
+      },
+      "position": { "x": 300, "y": 200 }
+    },
+    {
+      "id": "step-conclusion",
+      "label": "Next Steps",
+      "story": {
+        "text": "You've completed the introduction. Ready to dive deeper?",
+        "refs": []
+      },
+      "system": {
+        "text": "More routes will be available as the ecosystem grows.",
+        "refs": []
+      },
+      "service": {
+        "text": "Export this session or start a new route.",
+        "actions": [
+          { "id": "action-export", "label": "Export Session", "type": "export" },
+          { "id": "action-restart", "label": "Restart", "type": "navigate" }
+        ]
+      },
+      "position": { "x": 500, "y": 200 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-1",
+      "source": "step-intro",
+      "target": "step-overview",
+      "type": "NEXT"
+    },
+    {
+      "id": "edge-2",
+      "source": "step-overview",
+      "target": "step-conclusion",
+      "type": "NEXT"
+    },
+    {
+      "id": "edge-3",
+      "source": "step-conclusion",
+      "target": "step-intro",
+      "type": "RELATED",
+      "label": "restart"
+    }
+  ],
+  "limits": {
+    "max_nodes": 50,
+    "max_edges": 100,
+    "max_depth": 10
+  },
+  "meta": {
+    "tags": ["demo", "introduction"],
+    "difficulty": "beginner",
+    "estimatedTime": "2 min"
+  }
+}
