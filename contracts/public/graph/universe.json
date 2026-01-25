@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "Universe Graph — Single Source of Truth для онтологии и сценографии"
+  },
+  "nodes": [
+    {
+      "id": "universe",
+      "label": "Universe",
+      "position": { "x": 400, "y": 300 },
+      "story": "Добро пожаловать в Universe — единое пространство знаний, где всё связано со всем.",
+      "system": "Universe — корневой узел графа. От него расходятся все остальные понятия и сущности системы.",
+      "service": "Выберите направление для исследования. Каждый путь ведёт к новым открытиям.",
+      "type": "root",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "container", "abstraction": "high" },
+      "rag": { "index": true, "priority": 0.8 }
+    },
+    {
+      "id": "system",
+      "label": "System",
+      "position": { "x": 720, "y": 260 },
+      "story": "Системный слой экосистемы: правила, процессы и модули.",
+      "system": "Root узел системного графа. Объединяет модули, политики и процессы.",
+      "service": "Исследовать внутреннюю архитектуру.",
+      "type": "root",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "container", "abstraction": "high" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "system-graph",
+      "label": "System Graph",
+      "position": { "x": 920, "y": 260 },
+      "story": "Системный граф — карта документации и правил.",
+      "system": "Контейнер для модулей, политик и процессов экосистемы.",
+      "service": "Открыть карту модулей.",
+      "type": "hub",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "container", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "module-extended-mind",
+      "label": "extended-mind",
+      "position": { "x": 1080, "y": 140 },
+      "story": "Канонический граф и редактор системы.",
+      "system": "Модуль, который хранит Universe Graph и 3S контент.",
+      "service": "Перейти к архитектуре.",
+      "type": "module",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "content", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "module-dream-graph",
+      "label": "dream-graph",
+      "position": { "x": 1080, "y": 260 },
+      "story": "Финальный рендер канона в 3D.",
+      "system": "Renderer, читающий Universe Graph и контракты.",
+      "service": "Открыть рендер.",
+      "type": "module",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "content", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "module-contracts",
+      "label": "contracts",
+      "position": { "x": 1080, "y": 380 },
+      "story": "Единый язык между рендерами.",
+      "system": "Хранилище UI контрактов, ассетов и текстов.",
+      "service": "Открыть контракты.",
+      "type": "module",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "content", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "policy-ssot",
+      "label": "Single Source of Truth",
+      "position": { "x": 920, "y": 380 },
+      "story": "Истина — одна и находится в каноне.",
+      "system": "Политика: канон редактируется только через writer-модуль.",
+      "service": "Прочитать политику.",
+      "type": "policy",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "description", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "process-edit-to-render",
+      "label": "Edit → Render",
+      "position": { "x": 920, "y": 140 },
+      "story": "Путь от редактирования канона до визуализации.",
+      "system": "Процесс: editor → universe.json → render.",
+      "service": "Проследить пайплайн.",
+      "type": "process",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "description", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-system-structural",
+      "source": "system",
+      "target": "system-graph",
+      "type": "structural"
+    },
+    {
+      "id": "edge-system-contains-em",
+      "source": "system-graph",
+      "target": "module-extended-mind",
+      "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-dg",
+      "source": "system-graph",
+      "target": "module-dream-graph",
+      "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-contracts",
+      "source": "system-graph",
+      "target": "module-contracts",
+      "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-policy",
+      "source": "system-graph",
+      "target": "policy-ssot",
+      "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-process",
+      "source": "system-graph",
+      "target": "process-edit-to-render",
+      "type": "contains"
+    },
+    {
+      "id": "edge-process-relates-em",
+      "source": "process-edit-to-render",
+      "target": "module-extended-mind",
+      "type": "relates"
+    },
+    {
+      "id": "edge-process-relates-dg",
+      "source": "process-edit-to-render",
+      "target": "module-dream-graph",
+      "type": "relates"
+    },
+    {
+      "id": "edge-process-relates-contracts",
+      "source": "process-edit-to-render",
+      "target": "module-contracts",
+      "type": "relates"
+    },
+    {
+      "id": "edge-policy-relates-em",
+      "source": "policy-ssot",
+      "target": "module-extended-mind",
+      "type": "relates"
+    },
+    {
+      "id": "edge-policy-relates-dg",
+      "source": "policy-ssot",
+      "target": "module-dream-graph",
+      "type": "relates"
+    },
+    {
+      "id": "edge-policy-relates-contracts",
+      "source": "policy-ssot",
+      "target": "module-contracts",
+      "type": "relates"
+    }
+  ]
+}
