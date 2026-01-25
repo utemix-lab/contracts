@@ -1,3 +1,0 @@
-{"type": "node", "id": "project-extended-mind", "kind": "Project", "label": "extended-mind", "layer": "universe"}
-{"type": "node", "id": "project-vovaipetrova-core", "kind": "Project", "label": "vovaipetrova-core", "layer": "universe"}
-{"type": "edge", "id": "edge-em-vp", "source": "project-extended-mind", "target": "project-vovaipetrova-core", "relation": "exports_to"}
