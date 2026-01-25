@@ -35,7 +35,7 @@
       "label": "System Graph",
       "position": { "x": 920, "y": 260 },
       "story": "Системный граф — карта документации и правил.",
-      "system": "Контейнер для модулей, политик и процессов экосистемы.",
+      "system": "Контейнер для модулей, политик, процессов и спецификаций экосистемы.",
       "service": "Открыть карту модулей.",
       "type": "hub",
       "visibility": "public",
@@ -46,9 +46,9 @@
     {
       "id": "module-extended-mind",
       "label": "extended-mind",
-      "position": { "x": 1080, "y": 140 },
+      "position": { "x": 1080, "y": 100 },
       "story": "Канонический граф и редактор системы.",
-      "system": "Модуль, который хранит Universe Graph и 3S контент.",
+      "system": "Модуль, который хранит Universe Graph, документацию и Playbook.",
       "service": "Перейти к архитектуре.",
       "type": "module",
       "visibility": "public",
@@ -59,9 +59,9 @@
     {
       "id": "module-dream-graph",
       "label": "dream-graph",
-      "position": { "x": 1080, "y": 260 },
+      "position": { "x": 1080, "y": 220 },
       "story": "Финальный рендер канона в 3D.",
-      "system": "Renderer, читающий Universe Graph и контракты.",
+      "system": "Renderer, читающий Universe Graph и контракты. Read-only.",
       "service": "Открыть рендер.",
       "type": "module",
       "visibility": "public",
@@ -72,9 +72,9 @@
     {
       "id": "module-contracts",
       "label": "contracts",
-      "position": { "x": 1080, "y": 380 },
+      "position": { "x": 1080, "y": 340 },
       "story": "Единый язык между рендерами.",
-      "system": "Хранилище UI контрактов, ассетов и текстов.",
+      "system": "Хранилище канона (universe.json), UI контрактов, ассетов и текстов.",
       "service": "Открыть контракты.",
       "type": "module",
       "visibility": "public",
@@ -83,11 +83,24 @@
       "rag": { "index": true, "priority": 0.7 }
     },
     {
+      "id": "module-godot-sandbox",
+      "label": "godot-sandbox",
+      "position": { "x": 1080, "y": 460 },
+      "story": "Строительные леса для UI-сценографии.",
+      "system": "Опциональный модуль для экспериментов с не-веб-метафорами. Может быть убран.",
+      "service": "Открыть песочницу.",
+      "type": "module",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "content", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.5 }
+    },
+    {
       "id": "policy-ssot",
       "label": "Single Source of Truth",
-      "position": { "x": 920, "y": 380 },
+      "position": { "x": 760, "y": 380 },
       "story": "Истина — одна и находится в каноне.",
-      "system": "Политика: канон редактируется только через writer-модуль.",
+      "system": "Политика: канон редактируется только через extended-mind. Рендеры read-only.",
       "service": "Прочитать политику.",
       "type": "policy",
       "visibility": "public",
@@ -98,18 +111,51 @@
     {
       "id": "process-edit-to-render",
       "label": "Edit → Render",
-      "position": { "x": 920, "y": 140 },
+      "position": { "x": 760, "y": 140 },
       "story": "Путь от редактирования канона до визуализации.",
-      "system": "Процесс: editor → universe.json → render.",
+      "system": "Процесс: editor → universe.json → выбор узла → загрузка 3S → рендер/сценография.",
       "service": "Проследить пайплайн.",
       "type": "process",
       "visibility": "public",
       "status": "expandable",
       "semantics": { "role": "description", "abstraction": "medium" },
       "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "spec-universe-graph",
+      "label": "Universe Graph Spec",
+      "position": { "x": 1240, "y": 100 },
+      "story": "Формат канонического графа.",
+      "system": "Спецификация: universe.json + Node Contract v1. Описывает структуру узлов и рёбер.",
+      "service": "Читать спецификацию.",
+      "type": "spec",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "description", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 },
+      "content": { "system_ref": "extended-mind/docs/UNIVERSE_GRAPH_SPEC.md" }
+    },
+    {
+      "id": "spec-contracts-public",
+      "label": "Contracts Public Spec",
+      "position": { "x": 1240, "y": 340 },
+      "story": "Язык рендеров: layout, interaction, bindings.",
+      "system": "Спецификация структуры contracts/public: graph/, assets/, texts/, sessions/, ui/.",
+      "service": "Читать спецификацию.",
+      "type": "spec",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "description", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.5 }
     }
   ],
   "edges": [
+    {
+      "id": "edge-universe-system",
+      "source": "universe",
+      "target": "system",
+      "type": "structural"
+    },
     {
       "id": "edge-system-structural",
       "source": "system",
@@ -135,6 +181,12 @@
       "type": "contains"
     },
     {
+      "id": "edge-system-contains-godot",
+      "source": "system-graph",
+      "target": "module-godot-sandbox",
+      "type": "contains"
+    },
+    {
       "id": "edge-system-contains-policy",
       "source": "system-graph",
       "target": "policy-ssot",
@@ -145,6 +197,30 @@
       "source": "system-graph",
       "target": "process-edit-to-render",
       "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-spec-universe",
+      "source": "system-graph",
+      "target": "spec-universe-graph",
+      "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-spec-contracts",
+      "source": "system-graph",
+      "target": "spec-contracts-public",
+      "type": "contains"
+    },
+    {
+      "id": "edge-spec-universe-relates-em",
+      "source": "spec-universe-graph",
+      "target": "module-extended-mind",
+      "type": "describes"
+    },
+    {
+      "id": "edge-spec-contracts-relates-contracts",
+      "source": "spec-contracts-public",
+      "target": "module-contracts",
+      "type": "describes"
     },
     {
       "id": "edge-process-relates-em",
@@ -180,6 +256,12 @@
       "id": "edge-policy-relates-contracts",
       "source": "policy-ssot",
       "target": "module-contracts",
+      "type": "relates"
+    },
+    {
+      "id": "edge-policy-relates-godot",
+      "source": "policy-ssot",
+      "target": "module-godot-sandbox",
       "type": "relates"
     }
   ]
