@@ -97,10 +97,10 @@
     },
     {
       "id": "domain-ai",
-      "label": "AI & Industry",
+      "label": "AI & Computational Models",
       "position": { "x": 800, "y": 400 },
-      "story": "Искусственный интеллект и его применение.",
-      "system": "Домен: LLM, RAG, автоматизация, агенты.",
+      "story": "Искусственный интеллект как способ мышления и вычисления.",
+      "system": "Домен: модели, архитектуры, вычислительные парадигмы, агенты, LLM.",
       "service": "Исследовать AI.",
       "type": "domain",
       "visibility": "public",
@@ -110,10 +110,10 @@
     },
     {
       "id": "domain-music",
-      "label": "Music & Sound",
+      "label": "Music & Sound Culture",
       "position": { "x": 800, "y": 460 },
-      "story": "Музыка, звук, аудио-технологии.",
-      "system": "Домен: композиция, продакшен, синтез, акустика.",
+      "story": "Музыка и звук как культура, история и практика.",
+      "system": "Домен: композиция, продакшен, акустика, история музыки, звуковые культуры.",
       "service": "Исследовать звук.",
       "type": "domain",
       "visibility": "public",
@@ -123,10 +123,10 @@
     },
     {
       "id": "domain-visual",
-      "label": "Visual & Animation",
+      "label": "Visual & Media Arts",
       "position": { "x": 800, "y": 520 },
-      "story": "Визуал, видео, анимация, дизайн.",
-      "system": "Домен: графика, motion, 3D, UI/UX.",
+      "story": "Визуальное искусство, видео, motion, генеративная графика.",
+      "system": "Домен: 2D/3D, анимация, видео-арт, визуальные нарративы.",
       "service": "Исследовать визуал.",
       "type": "domain",
       "visibility": "public",
@@ -136,10 +136,10 @@
     },
     {
       "id": "domain-knowledge",
-      "label": "Knowledge Systems",
+      "label": "Knowledge & Cognitive Systems",
       "position": { "x": 800, "y": 580 },
-      "story": "Системы знаний: от заметок до графов.",
-      "system": "Домен: Notion, Obsidian, RAG, PKM, онтологии.",
+      "story": "Системы знаний, онтологии, архитектуры мышления.",
+      "system": "Домен: PKM, графы знаний, когнитивные модели, философия AI.",
       "service": "Исследовать знания.",
       "type": "domain",
       "visibility": "public",
@@ -149,10 +149,10 @@
     },
     {
       "id": "domain-dev",
-      "label": "Dev & Tools",
+      "label": "Software & Digital Tools",
       "position": { "x": 800, "y": 640 },
-      "story": "Разработка, инструменты, веб.",
-      "system": "Домен: код, фреймворки, DevOps, автоматизация.",
+      "story": "Инструментальный домен: софт, код, автоматизация.",
+      "system": "Домен: языки, фреймворки, DevOps. Без искусства и эстетики.",
       "service": "Исследовать инструменты.",
       "type": "domain",
       "visibility": "public",
@@ -264,6 +264,45 @@
       "status": "expandable",
       "semantics": { "role": "description", "abstraction": "medium" },
       "rag": { "index": true, "priority": 0.5 }
+    },
+    {
+      "id": "domain-design",
+      "label": "Design & Aesthetic Systems",
+      "position": { "x": 800, "y": 700 },
+      "story": "Дизайн как система мышления и эстетических решений.",
+      "system": "Домен: UI/UX, графический дизайн, типографика, эстетические системы.",
+      "service": "Исследовать дизайн.",
+      "type": "domain",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "container", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "domain-physical",
+      "label": "Physical & Fabrication",
+      "position": { "x": 800, "y": 760 },
+      "story": "Физическое воплощение: от CAD до арт-продакшена.",
+      "system": "Домен: проектирование, ЧПУ, электроника, материальное производство.",
+      "service": "Исследовать физическое.",
+      "type": "domain",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "container", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "domain-interactive",
+      "label": "Interactive & Game Culture",
+      "position": { "x": 800, "y": 820 },
+      "story": "Интерактивные миры, игры, симуляции.",
+      "system": "Домен: игровые движки, интерактивные нарративы, VR/AR, симуляции.",
+      "service": "Исследовать интерактив.",
+      "type": "domain",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "container", "abstraction": "medium" },
+      "rag": { "index": true, "priority": 0.6 }
     }
   ],
   "edges": [
@@ -451,6 +490,48 @@
       "id": "edge-policy-relates-godot",
       "source": "policy-ssot",
       "target": "module-godot-sandbox",
+      "type": "relates"
+    },
+    {
+      "id": "edge-domains-contains-design",
+      "source": "domains",
+      "target": "domain-design",
+      "type": "contains"
+    },
+    {
+      "id": "edge-domains-contains-physical",
+      "source": "domains",
+      "target": "domain-physical",
+      "type": "contains"
+    },
+    {
+      "id": "edge-domains-contains-interactive",
+      "source": "domains",
+      "target": "domain-interactive",
+      "type": "contains"
+    },
+    {
+      "id": "edge-design-relates-visual",
+      "source": "domain-design",
+      "target": "domain-visual",
+      "type": "relates"
+    },
+    {
+      "id": "edge-physical-relates-dev",
+      "source": "domain-physical",
+      "target": "domain-dev",
+      "type": "relates"
+    },
+    {
+      "id": "edge-interactive-relates-dev",
+      "source": "domain-interactive",
+      "target": "domain-dev",
+      "type": "relates"
+    },
+    {
+      "id": "edge-petrova-relates-design",
+      "source": "character-petrova",
+      "target": "domain-design",
       "type": "relates"
     }
   ]
