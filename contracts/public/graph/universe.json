@@ -9,7 +9,7 @@
       "label": "Universe",
       "position": { "x": 400, "y": 300 },
       "story": "Добро пожаловать в Universe — единое пространство знаний, где всё связано со всем.",
-      "system": "Universe — корневой узел графа. От него расходятся три ветви: System, Characters, Domains.",
+      "system": "Universe — корневой узел графа. От него расходятся четыре ветви: System, Characters, Domains, Practices.",
       "service": "Выберите направление для исследования.",
       "type": "root",
       "visibility": "public",
@@ -303,6 +303,45 @@
       "status": "expandable",
       "semantics": { "role": "container", "abstraction": "medium" },
       "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "practices",
+      "label": "Practices",
+      "position": { "x": 200, "y": 300 },
+      "story": "Поперечные практики — способы действия, работающие cross-domain.",
+      "system": "Hub для практик. Практики связывают домены, не заменяя их.",
+      "service": "Исследовать способы действия.",
+      "type": "hub",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "container", "abstraction": "high" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "practice-direction",
+      "label": "Режиссура",
+      "position": { "x": 100, "y": 200 },
+      "story": "Способ собирать внимание и смысл во времени: монтаж, сценография, ритм подачи.",
+      "system": "Поперечная практика: связывает визуал, дизайн и интерактив.",
+      "service": "Применить режиссёрский подход.",
+      "type": "practice",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "high" },
+      "rag": { "index": true, "priority": 0.6 }
+    },
+    {
+      "id": "practice-branding",
+      "label": "Брендинг",
+      "position": { "x": 100, "y": 400 },
+      "story": "Система образа и доверия: айдентика, тон, позиционирование.",
+      "system": "Поперечная практика: связывает дизайн, визуал и стратегию подачи.",
+      "service": "Построить образ.",
+      "type": "practice",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "high" },
+      "rag": { "index": true, "priority": 0.6 }
     }
   ],
   "edges": [
@@ -532,6 +571,54 @@
       "id": "edge-petrova-relates-design",
       "source": "character-petrova",
       "target": "domain-design",
+      "type": "relates"
+    },
+    {
+      "id": "edge-universe-practices",
+      "source": "universe",
+      "target": "practices",
+      "type": "structural"
+    },
+    {
+      "id": "edge-practices-contains-direction",
+      "source": "practices",
+      "target": "practice-direction",
+      "type": "contains"
+    },
+    {
+      "id": "edge-practices-contains-branding",
+      "source": "practices",
+      "target": "practice-branding",
+      "type": "contains"
+    },
+    {
+      "id": "edge-direction-relates-visual",
+      "source": "practice-direction",
+      "target": "domain-visual",
+      "type": "relates"
+    },
+    {
+      "id": "edge-direction-relates-design",
+      "source": "practice-direction",
+      "target": "domain-design",
+      "type": "relates"
+    },
+    {
+      "id": "edge-direction-relates-interactive",
+      "source": "practice-direction",
+      "target": "domain-interactive",
+      "type": "relates"
+    },
+    {
+      "id": "edge-branding-relates-design",
+      "source": "practice-branding",
+      "target": "domain-design",
+      "type": "relates"
+    },
+    {
+      "id": "edge-branding-relates-visual",
+      "source": "practice-branding",
+      "target": "domain-visual",
       "type": "relates"
     }
   ]
