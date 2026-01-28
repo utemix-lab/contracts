@@ -32,6 +32,14 @@
     "audio": [],
     "video": []
   },
+  "exports": {
+    "version": "1.0",
+    "files": [
+      "exports/pointer_tags_registry.json",
+      "exports/ai_catalog.jsonl",
+      "exports/practice_participation.jsonl"
+    ]
+  },
   "stats": {
     "totalAssets": 0,
     "byType": {
