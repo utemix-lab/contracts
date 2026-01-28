@@ -96,6 +96,136 @@
       "rag": { "index": true, "priority": 0.8 }
     },
     {
+      "id": "character-ai",
+      "label": "ИИ",
+      "position": { "x": 800, "y": 380 },
+      "story": "Сущность машинного мышления.",
+      "system": "Проводник в машинную логику и агентность.",
+      "service": "Следовать за ИИ.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-runa",
+      "label": "Руна",
+      "position": { "x": 800, "y": 420 },
+      "story": "Проводник в код и инструменты.",
+      "system": "Фокус на инженерии и агентах.",
+      "service": "Следовать за Руной.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-hinto",
+      "label": "Hinto",
+      "position": { "x": 800, "y": 460 },
+      "story": "Проводник через скрытые связи.",
+      "system": "Фокус на скрытых закономерностях.",
+      "service": "Следовать за Hinto.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-ancy",
+      "label": "Ancy",
+      "position": { "x": 800, "y": 500 },
+      "story": "Проводник в философию структуры.",
+      "system": "Фокус на архитектуре и принципах.",
+      "service": "Следовать за Ancy.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-ney",
+      "label": "Нэй",
+      "position": { "x": 800, "y": 540 },
+      "story": "Проводник через интерфейсы и форму.",
+      "system": "Фокус на восприятии и UX.",
+      "service": "Следовать за Нэй.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-dizi",
+      "label": "Дизи",
+      "position": { "x": 800, "y": 580 },
+      "story": "Проводник в художественные практики.",
+      "system": "Фокус на стиле, визуале, Киберантике.",
+      "service": "Следовать за Дизи.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-cadrik",
+      "label": "CADрик",
+      "position": { "x": 800, "y": 620 },
+      "story": "Проводник в инженерную визуализацию.",
+      "system": "Фокус на CAD и физическом мире.",
+      "service": "Следовать за CADрик.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-geymych",
+      "label": "Геймыч",
+      "position": { "x": 800, "y": 660 },
+      "story": "Проводник в игровые миры.",
+      "system": "Фокус на интерактиве и симуляциях.",
+      "service": "Следовать за Геймыч.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-author",
+      "label": "Автор",
+      "position": { "x": 800, "y": 700 },
+      "story": "Проводник через авторскую траекторию.",
+      "system": "Фокус на мета-уровне и рефлексии.",
+      "service": "Следовать за Автором.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
+      "id": "character-vasya",
+      "label": "Вася",
+      "position": { "x": 800, "y": 740 },
+      "story": "Проводник в простые траектории.",
+      "system": "Фокус на базовом чтении системы.",
+      "service": "Следовать за Васей.",
+      "type": "character",
+      "visibility": "public",
+      "status": "expandable",
+      "semantics": { "role": "mediator", "abstraction": "low" },
+      "rag": { "index": true, "priority": 0.7 }
+    },
+    {
       "id": "domain-ai",
       "label": "AI & Computational Models",
       "position": { "x": 800, "y": 400 },
@@ -226,6 +356,19 @@
       "rag": { "index": true, "priority": 0.6 }
     },
     {
+      "id": "policy-projection-coherence",
+      "label": "Согласованность проекций",
+      "position": { "x": 1150, "y": 110 },
+      "story": "Визуальные проекции узла должны быть согласованы.",
+      "system": "Политика: взаимодействие с одной проекцией узла вызывает согласованную реакцию всех проекций. Реализация — в рендерах, не в каноне.",
+      "service": "См. ADR-004.",
+      "type": "policy",
+      "visibility": "public",
+      "status": "core",
+      "semantics": { "role": "description", "abstraction": "high" },
+      "rag": { "index": true, "priority": 0.5 }
+    },
+    {
       "id": "process-edit-to-render",
       "label": "Edit → Render",
       "position": { "x": 1150, "y": 140 },
@@ -321,8 +464,8 @@
       "id": "practice-direction",
       "label": "Режиссура",
       "position": { "x": 100, "y": 200 },
-      "story": "Способ собирать внимание и смысл во времени: монтаж, сценография, ритм подачи.",
-      "system": "Поперечная практика: связывает визуал, дизайн и интерактив.",
+      "story": "Способ собирать внимание и смысл во времени: монтаж, сценография, ритм подачи. Первая реализация — куб доменов как визуальное утверждение структуры.",
+      "system": "Поперечная практика: связывает визуал, дизайн и интерактив. Паттерн: Perceptual Scenography (ADR-006).",
       "service": "Применить режиссёрский подход.",
       "type": "practice",
       "visibility": "public",
@@ -379,6 +522,66 @@
       "id": "edge-characters-contains-petrova",
       "source": "characters",
       "target": "character-petrova",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-ai",
+      "source": "characters",
+      "target": "character-ai",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-runa",
+      "source": "characters",
+      "target": "character-runa",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-hinto",
+      "source": "characters",
+      "target": "character-hinto",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-ancy",
+      "source": "characters",
+      "target": "character-ancy",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-ney",
+      "source": "characters",
+      "target": "character-ney",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-dizi",
+      "source": "characters",
+      "target": "character-dizi",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-cadrik",
+      "source": "characters",
+      "target": "character-cadrik",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-geymych",
+      "source": "characters",
+      "target": "character-geymych",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-author",
+      "source": "characters",
+      "target": "character-author",
+      "type": "contains"
+    },
+    {
+      "id": "edge-characters-contains-vasya",
+      "source": "characters",
+      "target": "character-vasya",
       "type": "contains"
     },
     {
@@ -457,6 +660,12 @@
       "id": "edge-system-contains-policy",
       "source": "system-graph",
       "target": "policy-ssot",
+      "type": "contains"
+    },
+    {
+      "id": "edge-system-contains-projection-policy",
+      "source": "system-graph",
+      "target": "policy-projection-coherence",
       "type": "contains"
     },
     {
