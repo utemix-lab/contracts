@@ -1,4 +1,5 @@
 {"kind":"service","external_id":"https://www.krea.ai/","display_name":"KreaAI","source":"manual","pointer_tags":["provider:krea","domain:ai","cap:image_to_image"],"evidence":["https://www.krea.ai/"],"updated_at":"2026-01-28"}
+{"kind":"service","external_id":"https://www.krea.ai/","display_name":"KreaAI (LipSync)","source":"manual","pointer_tags":["provider:krea","domain:ai","cap:lipsync","cap:image_to_image"],"evidence":["https://www.krea.ai/"],"updated_at":"2026-01-28"}
 {"kind":"service","external_id":"https://runwayml.com/","display_name":"Runway","source":"manual","pointer_tags":["provider:runway","domain:ai","cap:image_to_image"],"evidence":["https://runwayml.com/"],"updated_at":"2026-01-28"}
 {"kind":"service","external_id":"https://pika.art/","display_name":"Pika","source":"manual","pointer_tags":["domain:ai","cap:image_to_image"],"evidence":["https://pika.art/"],"updated_at":"2026-01-28"}
 {"kind":"service","external_id":"https://klingai.com/","display_name":"Kling","source":"manual","pointer_tags":["domain:ai","cap:image_to_image"],"evidence":["https://klingai.com/"],"updated_at":"2026-01-28"}
@@ -8,5 +9,7 @@
 {"kind":"model","external_id":"model:llama3","display_name":"Llama 3","source":"manual","pointer_tags":["domain:ai","method:rag"],"evidence":["https://huggingface.co/meta-llama"],"updated_at":"2026-01-28"}
 {"kind":"method","external_id":"method:diffusion","display_name":"Diffusion","source":"manual","pointer_tags":["method:diffusion","domain:ai"],"evidence":["https://paperswithcode.com/task/image-generation"],"updated_at":"2026-01-28"}
 {"kind":"method","external_id":"method:rag","display_name":"RAG","source":"manual","pointer_tags":["method:rag","domain:ai"],"evidence":["https://paperswithcode.com/task/retrieval-augmented-generation"],"updated_at":"2026-01-28"}
+{"kind":"method","external_id":"method:lipsync","display_name":"Lip Sync (method)","source":"manual","pointer_tags":["method:lipsync","cap:lipsync","domain:ai"],"evidence":["manual"],"updated_at":"2026-01-28"}
 {"kind":"tool","external_id":"https://www.comfyui.org/","display_name":"ComfyUI","source":"manual","pointer_tags":["method:diffusion","cap:image_to_image","domain:ai"],"evidence":["https://www.comfyui.org/"],"updated_at":"2026-01-28"}
 {"kind":"dataset","external_id":"dataset:lrs3","display_name":"LRS3 (Lip Reading Sentences 3)","source":"manual","pointer_tags":["cap:lipsync","domain:ai"],"evidence":["https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html"],"updated_at":"2026-01-28"}
+{"kind":"model","external_id":"model:example-lipsync","display_name":"Example LipSync Model","source":"manual","pointer_tags":["model:example-lipsync","cap:lipsync","domain:ai"],"evidence":["manual"],"updated_at":"2026-01-28"}

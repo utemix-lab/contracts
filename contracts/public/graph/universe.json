@@ -231,7 +231,7 @@
       "position": { "x": 800, "y": 400 },
       "story": "Искусственный интеллект как способ мышления и вычисления.",
       "system": "Домен: модели, архитектуры, вычислительные парадигмы, агенты, LLM.",
-      "service": "Исследовать AI. cap:image_to_image method:diffusion method:rag",
+      "service": "cap:lipsync cap:image_to_image method:diffusion method:rag",
       "type": "domain",
       "visibility": "public",
       "status": "expandable",
