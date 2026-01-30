@@ -23,7 +23,11 @@
       "brands": [],
       "software": []
     },
-    "flags": [],
+    "flags": [
+      "assets/flags/us.png",
+      "assets/flags/ru.png",
+      "assets/flags/fr.png"
+    ],
     "images": {
       "story": [],
       "system": [],
@@ -34,10 +38,15 @@
   },
   "exports": {
     "version": "1.0",
-    "files": [
-      "exports/pointer_tags_registry.json",
+    "catalogs": [
       "exports/ai_catalog.jsonl",
+      "exports/curated_sets.jsonl",
+      "exports/signals.jsonl",
       "exports/practice_participation.jsonl"
+    ],
+    "registries": [
+      "exports/pointer_tags_registry.json",
+      "exports/country_registry.json"
     ]
   },
   "stats": {
